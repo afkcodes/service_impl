@@ -12,6 +12,8 @@ class AudioPlayerTask extends BackgroundAudioTask {
         .setUrl("https://a11.streamgb.com/proxy/radioxl?mp=/stream");
     // Now we're ready to play
     _audioPlayer.play();
+    AudioServiceBackground.setMediaItem(id:'your-id-goes-here',title:'title',album:'album');
+    AudioServiceBackground.setState(....);
   }
 
   @override
@@ -25,10 +27,12 @@ class AudioPlayerTask extends BackgroundAudioTask {
   @override
   Future<void> onPlay() {
     _audioPlayer.play();
+    AudioServiceBackground.setState(....);
   }
 
   @override
   Future<void> onPause() {
     _audioPlayer.pause();
+    AudioServiceBackground.setState(....);
   }
 }
